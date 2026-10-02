@@ -22,3 +22,31 @@ elif 2000 <= available_amount <3000:
     print('you are the eligible to travel via bus')
 else:
     print('No transportation (because the budget is insufficient)')
+
+
+"""
+#Usecase 2: Food Delivery Discount
+Scenario
+Apply a promotional discount to a food order.
+
+Business Rules
+Minimum cart value must be reached.
+Calculate the percentage discount.
+Compare the calculated discount with the maximum discount allowed.
+Apply whichever discount rule is appropriate.
+If the minimum cart value is not reached, tell the customer how much more needs to be added.
+"""
+min_cart_value = 2000
+discount_percentage = .10
+max_discount = 200
+cart_value = float(input('Enter your cart value: '))
+if cart_value >= min_cart_value:
+    print(f'your cart value {cart_value:.2f} is eligible for the discount') # 2f is changing the value in to round off with two decimel value
+    discount_price = cart_value * discount_percentage
+    if discount_price > max_discount:
+        discount_price = max_discount
+        final_price = cart_value - discount_price
+        print(f'after applied the discount your final bill is:{final_price}')
+else:
+    add_amount = min_cart_value - cart_value
+    print(f'you need to add the amount of {add_amount} to your cart value to reach the eligible discount')
