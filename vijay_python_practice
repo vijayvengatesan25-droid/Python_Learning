@@ -1,0 +1,109 @@
+#1)Playing with Quotes
+#Use Case 1:
+Message="""This is Inceptez's "Python" class for Data Engineers & AI Engineers"""
+print(Message)
+
+#Use Case 2: MULTI LINES
+Message = """Welcome to Inceptez Technologies!
+Python Training: Basics
+Enjoy your learning journey."""
+print(Message)
+
+#Use Case 3: MUlti LINES with single quotes
+
+Message = "Welcome to Inceptez Technologies!\nPython Training: Basics\nEnjoy your learning journey."
+print(Message)
+
+#2)Let's learn all about VARIABLES
+
+student_name = 'vijay'
+course_name = 'Python Fundamentals'
+Training_Institute_Name = 'Inceptez Technologies'
+print(f"{student_name} is learning the course {course_name} at the institute {Training_Institute_Name}")
+
+""" 
+3) E. Variables Naming Conventions
+Use Case 1:
+Identify which variable names below are invalid for Inceptez’s student database:
+"""
+
+1) 2student = 'Ravi'   #invalid
+2) _student_id = 1001   #valid
+3) studentName = 'Priya'    #valid
+4) class name = 'Python'   #invalid
+5) inceptez_batch = 'Morning'   #valid
+
+
+#F. Type identification & Casting
+#Use Case 1:
+#Write a program that asks for an employee’s age.
+
+age_input = input('Enter your age: ')
+if isinstance(age_input, str):
+    print('you entered a string value')
+age = int(age_input)
+retirement_age = 65
+remaining_years = retirement_age - age
+print(f"you have the {remaining_years} years remaining to retired")
+
+"""
+Use Case 2 (Debug):
+Fix the type error in the following code for salary calculation:
+
+salary = '50000'
+bonus = 10000
+print('Total Salary in Inceptez:', salary + bonus)
+"""
+
+salary = 50000
+bounus = 10000
+print('Total Salary in Inceptez: ',salary + bounus)
+
+
+#G. Data types and casting
+#Use Case 1 — Employee Salary Breakdown Using Numeric & String Types
+#Employee Salary Breakdown
+
+employee_name = input('Enter your employee name: ')
+base_salary = float(input('Enter your base salary: '))
+hra_percent = int(input('Enter your hra percent: '))
+bonus_amount = float(input('Enter your bonus amount: '))
+HRA = base_salary * (hra_percent / 100)
+Total_Salary = base_salary + HRA + bonus_amount
+
+print('employee name: ', employee_name)
+print('base salary: ',base_salary)
+print("HRA: ",HRA)
+print('bonus: ',bonus_amount)
+print('Toal salary payable: ',Total_Salary)
+
+#Use Case 2: Student Result Classification
+"""
+a. Write a program that takes marks as input (initially as a string).
+B. Check if the value can be converted to float.
+C. Then classify (try using if condition with the help of AI, however we will learn about if condition soon):
+Marks >= 90 --> Outstanding
+ Marks >= 75 --> Excellent
+ Marks >= 50 --> Pass
+ Marks < 50 --> Fail
+D. If the input is not numeric, print:
+ Invalid marks entered — Please provide numeric input.
+"""
+
+print('please enter your SSLC marks subject wise')
+tamil = int(input('Enter your tamil mark: '))
+english = int(input('Enter your english mark: '))
+maths = int(input('Enter your maths mark: '))
+science = int(input('Enter your science mark: '))
+social = int(input('Enter your social mark: '))
+Total_Marks = (tamil + english + maths + science + social)/5
+if Total_Marks > 90:
+    print('your are one of the top 10 students!!!')
+    if 50 <= Total_Marks <= 90:
+        print('your are one of the medium students!!!')
+
+elif 30 <= Total_Marks <= 49:
+    print('your are one of the medium students!!!')
+
+else:
+    print('you need to improve your performance.\nbring your parents to the school tmrw')
