@@ -1,0 +1,149 @@
+# for loop --- unconditional loop
+#while loop --- conditional loop (entry & exit controlled loop)
+'''
+Exercise 1: Password Attempt System
+Simulate a login system:
+
+Use a while loop to allow up to 5 attempts.
+
+If the user enters "secret123", print "Access Granted" and break.
+
+If the user enters "skip", use continue (don’t count this as an attempt).
+
+If attempts exceed 5, print "Access Denied".
+'''
+
+
+attempts = 0
+max_attempts = 5
+
+while attempts < max_attempts:
+    password = input("Enter password: ")
+
+    if password == "skip":
+        print("Skipped attempt, try again...")
+        continue   # does not count as an attempt
+
+    if password == "secret123":
+        print("Access Granted")
+        break      # exit loop when correct password is entered
+
+    attempts += 1
+    print(f"Wrong password! Attempts left: {max_attempts - attempts}")
+
+else:
+    # This else runs only if while loop finishes without break
+    print("Access Denied")
+
+'''
+#Exercise 2: Sum Until Threshold
+Create a program that keeps adding numbers entered by the user until the sum exceeds 100.
+
+Use a while loop.
+
+If the user enters a negative number, use continue (ignore it).
+
+If the sum exceeds 100, use break and print "Threshold reached!".
+'''
+
+max_total = 100
+total = 0
+
+while total < max_total:
+    number = int(input("Enter a number: "))
+    
+    if number < 0:
+        print("Negative numbers are ignored.")
+        continue   # skip adding negative numbers
+    
+    print(f"You entered the number: {number}")
+    total += number
+    print(f"Total value is: {total}")
+    
+    if total >= max_total:
+        print("Threshold reached!")
+        break
+
+'''
+#Exercise 3: Prime Number Finder
+Write a program that finds prime numbers between 10 and 50.
+
+Use a for loop to check each number.
+
+Use a nested loop to test divisibility.
+
+Use break to stop checking once a divisor is found.
+
+Use continue to skip non-primes.
+'''
+
+for num in range(10, 51):   # loop through numbers 10 to 50
+    if num < 2:
+        continue            # skip numbers less than 2
+
+    is_prime = True         # assume number is prime
+
+    # check divisibility
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break           # stop checking further if divisible
+
+    if is_prime:
+        print(num, "is a prime number")
+
+
+'''
+#Exercise 4: Multiples Finder with Control Flow
+Write a program that finds multiples of 3 between 1 and 50.
+
+Use a for loop.
+
+Skip numbers that are also multiples of 5 (using continue).
+
+Stop the loop completely once the number exceeds 40 (using break).
+'''
+
+for num in range(1,51):
+    if num > 40:
+        break
+    if num % 3 == 0:   # this will gives a number multiple of 3
+        if num % 5 == 0: # this will filtered the number in result which is divided by 5
+            continue
+        print (num)
+
+'''
+#Exercise 5: Reverse Number Guess Game
+Create a program where the computer thinks of a number between 1 and 50, and the user has to guess it.
+
+Use a while loop.
+
+If the guess is too high, print "Too high!" and continue.
+
+If the guess is too low, print "Too low!" and continue.
+
+If the guess is correct, print "You got it!" and break.
+
+Limit the user to 7 attempts. If they don’t guess correctly, print "Game Over!".
+
+'''
+
+import random
+
+secret_number = random.randint(1, 50)
+attempts = 0
+max_attempts = 8
+while attempts < max_attempts:
+    num=int(input("Enter a secret number between 1 and 50: "))
+    attempts += 1
+    if num > secret_number:
+        print("your Secret number is too high")
+        continue
+    elif num < secret_number:
+        print("your Secret number is too low")
+        continue
+    else:
+        print('you got it!!')
+        break
+if attempts == max_attempts and num != secret_number:
+    print("Game Over! ❌ The number was", secret_number)
