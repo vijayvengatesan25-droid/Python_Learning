@@ -1,0 +1,67 @@
+# 1) Topic 1: Declaring a Function ------------------------------
+def welcome():
+       print("welcome to python learning!")
+welcome()
+
+
+# Topic 2: Positional & Keyword Arguments  -----------------------------------------------------------------
+
+#positional and keyword arguments
+"""
+Student Info Function
+Write a function student_info(name, age) and call it once using positional arguments, and once using keyword arguments.
+"""
+
+def student_info(name, age):
+    print(f"The name is {name} and you are {age} years old")
+
+student_info('vijay',30)  #Positional
+
+student_info(age=32,name='tinesh')  #keyword and reverse
+
+
+'''
+Order Item Function
+Write a function order_item(item, quantity) and call it with mixed styles (e.g., positional for one, keyword for the other).
+'''
+def order_item(item, quantity):
+    print (f"you ordered {item} with {quantity} items")
+
+order_item('pen',quantity=100)   #mixed
+
+# Topic 3: Default Arguments -----------------------------------------------------------------------
+
+'''
+Power Function
+Write a function power(base, exponent=2) that returns base raised to the exponent.
+
+Example: power(5) → 25 (since exponent defaults to 2)
+
+Example: power(2, 3) → 8
+'''
+
+def power(base, exponent=2):
+    print(f"the power of {base} is {base**exponent}")
+    return base ** exponent
+
+
+power(3)  # default value is automatically pick no need to mention
+
+power (3,3)  # we manually assigning the value to the parameter)
+
+
+
+'''
+Login Function
+Write a function login(username="admin") that prints a welcome message.
+Example: login() → "Welcome admin!"
+Example: login("Vijay") → "Welcome Vijay!"
+'''
+def login(username="admin"):
+    print(f"Welcome {username}!")
+
+login()
+
+login('vijay')
+
+
